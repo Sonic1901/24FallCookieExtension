@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Tracker</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<div id="popup">
+    <header>
+        <h1>Cookie Tracker</h1>
+    </header>
+    <main>
+        <section id="summary">
+            <h2>Summary</h2>
+            <table id="summary-table">
+                <tr>
+                    <th>Total Cookies</th>
+                    <td><span id="cookie-count">0</span></td>
+                    <th>Essential Cookies</th>
+                    <td><span id="essential-count">0</span></td>
+                    <th>Third-Party Cookies</th>
+                    <td><span id="third-party-count">0</span></td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="filters">
+            <h2>Filters</h2>
+            <div class="filter-row">
+                <label for="filter-name">Name:</label>
+                <input type="text" id="filter-name" placeholder="e.g., user_id" />
+                <label for="filter-domain">Domain:</label>
+                <input type="text" id="filter-domain" placeholder="e.g., example.com" />
+            </div>
+
+            
+            <div class="filter-row">
+                <label for="filter-type">Type:</label>
+                <select id="filter-type">
+                    <option value="all">All</option>
+                    <option value="essential">Essential</option>
+                    <option value="third-party">Third-Party</option>
+                </select>
+                <label for="filter-expiration">Expires in (days):</label>
+                <input style="width:8%" type="number" id="filter-expiration" min="1" />
+            </div>
+
+            <button style="margin-left:42%" id="apply-filters">Apply Filters</button>
+        </section>
+
+        <section>
+            <h2>Cookies</h2>
+            <p style="margin-left:5%"> <i>Yellow cookies are tied directly to the current website, pink cookies are potentially insecure, orange cookies are both.</i> </p>
+        </section>
+        <section id="cookie-table-section">
+        <table id="cookie-table">
+            <thead>
+            <tr id="table-headers">
+                <th>Select</th>
+                <th>Name</th>
+                <th>Domain</th>
+                <th>Type</th>
+                <th>Time Accessed</th>
+                <th>Expiration Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        </section>
+
+        <button id="select-all">Select All</button>
+        <button id="select-third-party">Select Third-Party Cookies</button>
+        <button id="clear-selection">Clear Selection</button>
+        <button id="delete-selected">Delete Selected</button>
+        <button id="export-cookies">Export as CSV</button>
+        
+        <section id="glossary">
+            <h2>Cookie Glossary</h2>
+            <ul>
+                <li><strong>Essential Cookies:</strong> Necessary for website functionality (e.g., login).</li>
+                <li><strong>Third-Party Cookies:</strong> Used by advertisers or analytics services.</li>
+                <li><strong>Secure Cookies:</strong> Transmitted only over HTTPS for added security.</li>
+            </ul>
+        </section>
+
+        <section id="barGraphSection">
+            <h2>Cookies by Domain</h2>
+            <canvas id="cookiesChart" width="400" height="200"></canvas>
+        </section>
+        
+        <section id="histogram-section">
+            <h2>Cookie Expiration</h2>
+            <canvas id="expiration-histogram" width="550" height="300"></canvas>
+        </section>
+    </main>
+</div>
+<script src="popup.js"></script>
+<script src="chart.js"></script>
+</body>
+</html>

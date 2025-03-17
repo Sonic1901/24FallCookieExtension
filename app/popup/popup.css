@@ -1,0 +1,180 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 700px;
+    height: 600px;
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 2px;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+#summary-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#summary-table th, #summary-table td {
+    text-align: left;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+#summary-table th {
+    background-color: #f4f4f4;
+}
+
+#filters {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    background-color: #f9f9f9;
+    border-radius: 1px;
+}
+
+#filter-options {
+    padding: 3px;
+    border-bottom: 1px solid #ddd;
+}
+
+.filter-row {
+    display: flex;
+    gap: 2px;
+    justify-content: flex-start;
+}
+
+#apply-filters {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-size: 1em;
+}
+
+#apply-filters:hover {
+    background-color: #0056b3;
+}
+
+#cookie-table-section {
+    overflow-x: auto;
+    max-height: 300px;
+}
+
+#cookie-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#cookie-table td {
+    text-align: left;
+    padding: 4px;
+    border: 2px solid #ddd;
+}
+
+#cookie-table th {
+    background-color: #4CAF50;
+    color: white;
+    position: sticky;
+    font-weight: bold;
+    top: 0; 
+    z-index: 1; 
+}
+
+#cookie-table th,  
+#cookie-table td {
+    max-width: 165px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+th.sort-asc::after {
+    content: " ▲";
+    font-size: 0.8em;
+    margin-left: 5px;
+    color: #333;
+}
+
+th.sort-desc::after {
+    content: " ▼";
+    font-size: 0.8em;
+    margin-left: 5px;
+    color: #333;
+}
+
+.table-container {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+button {
+    margin: 5px;
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.table-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+#histogram-section {
+    padding: px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#expiration-histogram {
+    width: 100%;
+    height: 300px;
+}
